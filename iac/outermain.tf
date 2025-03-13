@@ -66,11 +66,11 @@ resource "azurerm_resource_group" "rg_global" {
 
 #this is to create the Global AKV
 resource "azurerm_key_vault" "akv" {
-  name                       = format("akv-%s-%s", local.base_name, lower(var.global_region))
+  name                       = "akv-65fgr5-yyy"
   location                   = var.global_region
   resource_group_name        = azurerm_resource_group.rg_global.name
   tenant_id                  = data.azurerm_client_config.current.tenant_id
-  sku_name                   = "premium"
+  sku_name                   = "standard"
   soft_delete_retention_days = var.keyvault_soft_delete_retention_days
   purge_protection_enabled   = false
 
