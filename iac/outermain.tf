@@ -66,7 +66,7 @@ resource "azurerm_resource_group" "rg_global" {
 
 #this is to create the Global AKV
 resource "azurerm_key_vault" "akv" {
-  name                       = "akv-65fgr5-yyy"
+  name                       = "format("akv-%s-%s", local.base_name, lower(var.global_region))"
   location                   = var.global_region
   resource_group_name        = azurerm_resource_group.rg_global.name
   tenant_id                  = data.azurerm_client_config.current.tenant_id
@@ -76,7 +76,7 @@ resource "azurerm_key_vault" "akv" {
 
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = data.azurerm_client_config.current.object_id
+    object_id = TEST
 
     key_permissions = [
       "create",
