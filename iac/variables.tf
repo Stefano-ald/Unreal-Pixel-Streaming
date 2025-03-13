@@ -52,7 +52,7 @@ variable "images_resource_group_name" {
 }
 
 variable "images_resource_group_location" {
-  default = "eastus"
+  default = "westeurope"
 }
 
 variable "shared_image_gallery" {
