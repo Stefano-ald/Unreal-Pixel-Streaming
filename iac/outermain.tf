@@ -76,7 +76,7 @@ resource "azurerm_key_vault" "akv" {
 
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = TEST
+    object_id = "TEST"
 
     key_permissions = [
       "create",
